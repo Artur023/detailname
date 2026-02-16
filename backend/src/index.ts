@@ -1,2 +1,2 @@
 console.log('Hello, World');
-'asdf'.split('').forEach((char) => console.log(char));
+'Привет'.split('').forEach((char) => console.log(char));
