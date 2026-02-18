@@ -1,5 +1,5 @@
-import { AllDetailsPage } from "./AllDetailsPage";
-import { TrpcProvider } from "./lib/trpc";
+import { AllDetailsPage } from './AllDetailsPage';
+import { TrpcProvider } from './lib/trpc';
 
 export const App = () => {
   return (
@@ -8,5 +8,3 @@ export const App = () => {
     </TrpcProvider>
   );
 };
-
-

@@ -6,6 +6,8 @@
     "dev": "tsx watch src/index.ts",
     "build": " rimraf dist &&  tsc -b tsconfig.json",
     "start": "node dist/index.js",
+    "types": "tsc --noEmit  --project tsconfig.json",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
     "prettify": "prettier --log-level warn --cache --write \"src/**/*.{ts,tsx,js,json,yml,scss}\" \"!**/{node_modules,dist}/**/*\""
   },
   "dependencies": {
@@ -17,10 +19,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.2.3",
-    "prettier": "^3.8.1",
-    "rimraf": "^6.1.2",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0"
   }
 }

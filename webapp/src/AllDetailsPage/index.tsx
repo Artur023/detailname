@@ -15,7 +15,7 @@ export const AllDetailsPage = () => {
       <h1>All details</h1>
       {data?.map((detail) => (
         <div key={detail.nick}>
-          <h2>{detail.name}</h2>
+          <h2>{detail.title}</h2>
           <p>{detail.description}</p>
         </div>
       ))}
