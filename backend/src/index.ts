@@ -15,12 +15,6 @@ expressApp.use(
   })
 );
 
-const x: number = 123;
-
-if (Math.random()) {
-  console.info(x);
-}
-
 expressApp.listen(3000, () => {
   console.info('Server is running on http://localhost:3000');
 });
