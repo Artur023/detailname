@@ -1,10 +1,18 @@
-import { AllDetailsPage } from './AllDetailsPage';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import { AllDetailsPage } from '../src/pages/AllDetailsPage';
 import { TrpcProvider } from './lib/trpc';
+import { ViewDetailPage } from './pages/ViewDetailPage';
+import { getAllDetailsRoute, VIEW_DETAIL_ROUTE } from './lib/routes';
 
 export const App = () => {
   return (
     <TrpcProvider>
-      <AllDetailsPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path={getAllDetailsRoute()} element={<AllDetailsPage />} />
+          <Route path={VIEW_DETAIL_ROUTE} element={<ViewDetailPage />} />
+        </Routes>
+      </BrowserRouter>
     </TrpcProvider>
   );
 };

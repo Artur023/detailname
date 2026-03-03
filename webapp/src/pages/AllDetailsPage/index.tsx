@@ -1,4 +1,6 @@
-import { trpc } from '../lib/trpc';
+import { getViewDetailRoute } from '../../lib/routes';
+import { trpc } from '../../lib/trpc';
+import { Link } from 'react-router';
 
 export const AllDetailsPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getDetails.useQuery();
@@ -15,7 +17,9 @@ export const AllDetailsPage = () => {
       <h1>All details</h1>
       {data?.map((detail) => (
         <div key={detail.nick}>
-          <h2>{detail.title}</h2>
+          <h2>
+            <Link to={getViewDetailRoute(detail.nick)}>{detail.name}</Link>
+          </h2>
           <p>{detail.description}</p>
         </div>
       ))}
