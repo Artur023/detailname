@@ -1,7 +1,8 @@
 import { useParams } from 'react-router';
+import type { ViewIdeaRouteParams } from '../../lib/routes';
 
 export const ViewDetailPage = () => {
-  const { detailNick } = useParams() as { detailNick: string };
+  const { detailNick } = useParams() as ViewIdeaRouteParams;
   return (
     <div>
       <h1>{detailNick}</h1>

@@ -15,10 +15,10 @@ export const AllDetailsPage = () => {
   return (
     <div>
       <h1>All details</h1>
-      {data?.map((detail) => (
+      {data?.details?.map((detail) => (
         <div key={detail.nick}>
           <h2>
-            <Link to={getViewDetailRoute(detail.nick)}>{detail.name}</Link>
+            <Link to={getViewDetailRoute({ detailNick: detail.nick })}>{detail.name}</Link>
           </h2>
           <p>{detail.description}</p>
         </div>
