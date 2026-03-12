@@ -1,0 +1,10 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.tittle {
+  @include h1;
+}
+
+.content {
+  @include h2;
+}

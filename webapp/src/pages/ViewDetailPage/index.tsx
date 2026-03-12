@@ -2,6 +2,7 @@ import { useParams } from 'react-router';
 import type { ViewIdeaRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import css from './index.module.scss';
+import { Segment } from '../../components/Segment';
 
 export const ViewDetailPage = () => {
   const { detailNick } = useParams() as ViewIdeaRouteParams;
@@ -19,10 +20,8 @@ export const ViewDetailPage = () => {
   }
 
   return (
-    <div>
-      <h1 className={css.title}>{data.detail.name}</h1>
-      <h2 className={css.description}>{data.detail.description}</h2>
+    <Segment title={data.detail.name} description={data.detail.description}>
       <div className={css.text} dangerouslySetInnerHTML={{ __html: data.detail.text }} />
-    </div>
+    </Segment>
   );
 };

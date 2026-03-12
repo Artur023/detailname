@@ -2,6 +2,7 @@ import { getViewDetailRoute } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import { Link } from 'react-router';
 import css from './index.module.scss';
+import { Segment } from '../../components/Segment';
 
 export const AllDetailsPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getDetails.useQuery();
@@ -14,18 +15,22 @@ export const AllDetailsPage = () => {
   }
 
   return (
-    <div>
-      <h1 className={css.title}>All details</h1>
+    <Segment title="All Details" size={1}>
       <div className={css.ideas}>
         {data?.details?.map((detail) => (
           <div className={css.idea} key={detail.nick}>
-            <h2 className={css.ideaName}>
-              <Link className={css.ideaLink} to={getViewDetailRoute({ detailNick: detail.nick })}>{detail.name}</Link>
-            </h2>
-            <p>{detail.description}</p>
+            <Segment
+              title={
+                <Link className={css.ideaLink} to={getViewDetailRoute({ detailNick: detail.nick })}>
+                  {detail.name}
+                </Link>
+              }
+              size={2}
+              description={detail.description}
+            />
           </div>
         ))}
       </div>
-    </div>
+    </Segment>
   );
 };
