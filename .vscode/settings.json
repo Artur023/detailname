@@ -1,6 +1,8 @@
 {
-  "eslint.workingDirectories": [
-    "backend",
-    "webapp"
-  ],
+  "eslint.workingDirectories": ["backend", "webapp"],
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
 }
