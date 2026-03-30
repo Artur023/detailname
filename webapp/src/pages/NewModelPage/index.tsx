@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { z } from 'zod';
 
-export function NewDetailPage() {
+export function NewModelPage() {
   const schema = z.object({
     name: z.string({ error: 'Name is required' }).min(1, 'Name is required'),
     nick: z
@@ -31,7 +31,7 @@ export function NewDetailPage() {
     },
   });
   return (
-    <Segment title={'New Detail'}>
+    <Segment title={'New Model'}>
       <form onSubmit={formik.handleSubmit}>
         <Input name="name" label="Name" formik={formik} />
         <Input name="nick" label="Nick" formik={formik} />

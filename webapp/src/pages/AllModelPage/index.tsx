@@ -1,11 +1,11 @@
-import { getViewDetailRoute } from '../../lib/routes';
+import { getViewModelRoute } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import { Link } from 'react-router';
 import css from './index.module.scss';
 import { Segment } from '../../components/Segment';
 
-export const AllDetailsPage = () => {
-  const { data, error, isLoading, isFetching, isError } = trpc.getDetails.useQuery();
+export const AllModelsPage = () => {
+  const { data, error, isLoading, isFetching, isError } = trpc.getModels.useQuery();
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }
@@ -15,18 +15,18 @@ export const AllDetailsPage = () => {
   }
 
   return (
-    <Segment title="All Details" size={1}>
+    <Segment title="All Models" size={1}>
       <div className={css.ideas}>
-        {data?.details?.map((detail) => (
-          <div className={css.idea} key={detail.nick}>
+        {data?.models?.map((model) => (
+          <div className={css.idea} key={model.nick}>
             <Segment
               title={
-                <Link className={css.ideaLink} to={getViewDetailRoute({ detailNick: detail.nick })}>
-                  {detail.name}
+                <Link className={css.ideaLink} to={getViewModelRoute({ modelNick: model.nick })}>
+                  {model.name}
                 </Link>
               }
               size={2}
-              description={detail.description}
+              description={model.description}
             />
           </div>
         ))}

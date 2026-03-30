@@ -6,16 +6,16 @@ export const Layout = () => {
   return (
     <div className={css.layout}>
       <div className={css.navigation}>
-        <div className={css.logo}>DetailNick</div>
+        <div className={css.logo}>ModelNick</div>
         <ul className={css.menu}>
           <li className={css.item}>
-            <Link className={css.link} to={router.getAllDetailsRoute()}>
-              All Details
+            <Link className={css.link} to={router.getAllModelsRoute()}>
+              All Models
             </Link>
           </li>
           <li className={css.item}>
-            <Link className={css.link} to={router.getNewDetailRoute()}>
-              New Detail
+            <Link className={css.link} to={router.getNewModelRoute()}>
+              New Model
             </Link>
           </li>
         </ul>

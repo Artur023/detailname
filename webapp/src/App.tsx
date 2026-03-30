@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import { AllDetailsPage } from '../src/pages/AllDetailsPage';
+import { AllModelsPage } from '../src/pages/AllModelPage';
 import { TrpcProvider } from './lib/trpc';
-import { ViewDetailPage } from './pages/ViewDetailPage';
+import { ViewModelPage } from './pages/ViewModelPage';
 import * as router from './lib/routes';
 import { Layout } from './components/Layout';
-import { NewDetailPage } from './pages/NewDetailPage';
+import { NewModelPage } from './pages/NewModelPage';
 import './styles/global.scss';
 
 export const App = () => {
@@ -13,9 +13,9 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path={router.getAllDetailsRoute()} element={<AllDetailsPage />} />
-            <Route path={router.getNewDetailRoute()} element={<NewDetailPage />} />
-            <Route path={router.getViewDetailRoute(router.viewDetailRouteParams)} element={<ViewDetailPage />} />
+            <Route path={router.getAllModelsRoute()} element={<AllModelsPage />} />
+            <Route path={router.getNewModelRoute()} element={<NewModelPage />} />
+            <Route path={router.getViewModelRoute(router.viewModelRouteParams)} element={<ViewModelPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
